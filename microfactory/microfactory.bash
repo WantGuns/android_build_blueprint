@@ -29,6 +29,9 @@
 #  ${EXTRA_ARGS}: extra arguments to pass to microfactory (-pkg-path, etc)
 function build_go
 {
+    # sharkbait: override the bundled go toolchain
+    GOROOT="/usr/lib/go"
+
     # Increment when microfactory changes enough that it cannot rebuild itself.
     # For example, if we use a new command line argument that doesn't work on older versions.
     local mf_version=3
